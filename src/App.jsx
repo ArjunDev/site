@@ -1,14 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import SideBarNav from './components/sidebar/sidebar-nav';
-import About from './components/sidebar/sidebar-tabs/about';
-import Projects from './components/sidebar/sidebar-tabs/projects';
-import Services from './components/sidebar/sidebar-tabs/services';
 import Home from './components/sidebar/sidebar-tabs/home';
-import Profile from './components/sidebar/sidebar-tabs/dashboard/Profile';
-import Settings from './components/sidebar/sidebar-tabs/dashboard/Settings';
-import Reports from './components/sidebar/sidebar-tabs/dashboard/Reports';
-//import DashboardHome from './components/sidebar-tabs/dashboard/DashboardHome';
-import { Navigate } from "react-router-dom";
+import Profile from './components/sidebar/sidebar-tabs/projects/profile';
+import Settings from './components/sidebar/sidebar-tabs/projects/Settings';
+import Project3 from './components/sidebar/sidebar-tabs/projects/project3';
+import Other from './components/sidebar/sidebar-tabs/other';
+import About from './components/sidebar/sidebar-tabs/about';
 
 function App() {
 
@@ -19,15 +16,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>} />
         {/*<Route path='/dashboard' element={<DashboardHome />}> */}
-          <Route path='/dashboard'>
-          <Route index element={<Navigate to="/dashboard/profile" replace />} /> 
+        <Route path='/project'>
+          <Route index element={<Navigate to="/project/profile" replace />} /> 
           {/*To navigate to profile by defaul when clicked on dashboard*/}
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="reports" element={<Reports />} />
+          <Route path="kanban" element={<Project3 />} />
         </Route>
-        <Route path='/services' element={<Services/>}/>
-        <Route path='/projects' element={<Projects/>} />
+        <Route path='/other' element={<Other/>} />
         <Route path='/about' element={<About/>} />
       </Routes>
       </div>
