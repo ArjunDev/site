@@ -1,31 +1,48 @@
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import SideBarNav from './components/sidebar/sidebar-nav';
 import Home from './components/sidebar/sidebar-tabs/home';
-import Profile from './components/sidebar/sidebar-tabs/projects/profile';
-import Settings from './components/sidebar/sidebar-tabs/projects/Settings';
 import Project3 from './components/sidebar/sidebar-tabs/projects/project3';
 import Other from './components/sidebar/sidebar-tabs/other';
 import About from './components/sidebar/sidebar-tabs/about';
+import { InputContext } from './components/sidebar/sidebar-tabs/projects/project3/kanban/input-context';
+import Project1 from './components/sidebar/sidebar-tabs/projects/project1/project1';
+import Project2 from './components/sidebar/sidebar-tabs/projects/project2/project2';
+
+
 
 function App() {
 
-  return (
+  const [lastVisitedPage, setLastVisitedPage] = useState(localStorage.getItem("lastVisitedPage") );
+  const location = useLocation();
 
-      <div className='flex bg-gray-500'>
+  useEffect(() => {
+    // Update last visited page whenever the user navigates
+    if (location.pathname !== "/project") {
+      setLastVisitedPage(location.pathname);
+      localStorage.setItem("lastVisitedPage", location.pathname);
+    }
+  }, [location]);
+
+  return (
+      <div className='flex'>
+      <InputContext>
       <SideBarNav/>
       <Routes>
-        <Route path='/' element={<Home/>} />
-        {/*<Route path='/dashboard' element={<DashboardHome />}> */}
-        <Route path='/project'>
-          <Route index element={<Navigate to="/project/profile" replace />} /> 
-          {/*To navigate to profile by defaul when clicked on dashboard*/}
-          <Route path="profile" element={<Profile />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="kanban" element={<Project3 />} />
-        </Route>
+        <Route path='/home' element={<Home/>} />
         <Route path='/other' element={<Other/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/project'>
+          {/* <Route index element={<Navigate to="/project/kanban" replace />}/>  */}
+          
+           {/* Show the last visited page by default */}
+          <Route path="/project" element={<Navigate to={lastVisitedPage} replace />} />
+          <Route path="project1" element={<Project1 />} />
+          <Route path="project2" element={<Project2 />} />
+          <Route path="kanban" element={<Project3 />} />
+        </Route>
       </Routes>
+      </InputContext>
       </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Settings = () => {
+const Project2 = () => {
   return (
     <div className='flex justify-center items-center w-full bg-lime-600'>
     <div className='flex justify-center items-center text-center bg-lime-800 w-32 h-32 text-white font-bold'>Settings</div>
@@ -8,4 +8,4 @@ const Settings = () => {
   )
 }
 
-export default Settings
+export default Project2

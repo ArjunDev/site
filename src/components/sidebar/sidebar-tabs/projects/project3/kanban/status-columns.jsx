@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ElementsData } from './input-context';
 import EditTask from './edit-task-modal';
 import DeleteTask from './delete-task-modal';
+//import { FaTrash, FaPenSquare } from 'react-icons/fa';
 
 function StatusColumns() {
   
@@ -9,7 +10,7 @@ function StatusColumns() {
   const [pendingTasks, setPendingTasks] = useState([]);
   const [inProgressTasks, setInProgressTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState([]);
-  const [isDeleting, setIsDeleting] = useState(false); // Control edit mode
+  const [isDeleting, setIsDeleting] = useState(false); // Control delete mode
   const [deletingTask, setDeletingTask] = useState(null); // Store task 
   const [isEditing, setIsEditing] = useState(false); // Control edit mode
   const [editingTask, setEditingTask] = useState(null); // Store task being edited
@@ -73,7 +74,6 @@ function StatusColumns() {
     setEditingTask(null);
   };
 
-
   const handleDeleteTaskBtn = (taskId) => {
     setDeletingTask(taskId);  // Set the task ID to be deleted
     setIsDeleting(true);      // Show the Delete modal
@@ -118,7 +118,7 @@ function StatusColumns() {
         onDrop={(e) => handleDrop(e, 'red')}
       >
         <div>
-        <span className="shadow-md shadow-red-400 p-2 mb-2 font-bold w-full flex justify-center items-center">Pending
+        <span className="shadow-md bg-blue-100 shadow-red-400 p-2 mb-2 font-bold rounded w-full flex justify-center items-center">Pending
         <span 
           className='text-sm font-light ml-1'>- {pendingTasks.length} {pendingTasks.length > 1 ? "Items" : "Item"}
         </span></span>
@@ -128,7 +128,7 @@ function StatusColumns() {
             key={element.id}
             draggable
             onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-5 gap-2 bg-blue-100 rounded hover:cursor-grab"
+            className="flex flex-col p-4 gap-2 mt-1.5 bg-blue-100 rounded hover:cursor-grab"
             style={{ borderBottom: `3px solid ${element.color}`}}
           >
           <p className="p-2 font-bold text-center">Task: {element.task}</p> 
@@ -162,7 +162,7 @@ function StatusColumns() {
         onDrop={(e) => handleDrop(e, 'orange')}
       >
         <div>
-        <span className="shadow-md shadow-yellow-500 p-2 mb-2 font-bold w-full flex justify-center items-center">InProgress
+        <span className="shadow-md bg-blue-100 shadow-yellow-500 p-2 mb-2 font-bold w-full rounded flex justify-center items-center">InProgress
         <span 
           className='text-sm font-light ml-1'>- {inProgressTasks.length} {inProgressTasks.length > 1 ? "Items" : "Item"}
         </span></span>
@@ -172,7 +172,7 @@ function StatusColumns() {
             key={element.id}
             draggable
             onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-7 gap-2 bg-blue-100 rounded hover:cursor-grab"
+            className="flex flex-col p-4 gap-2 bg-blue-100 rounded hover:cursor-grab shadow-lg"
             style={{ borderBottom: `3px solid ${element.color}` }}
           >
           <p className="p-2 font-bold text-center">Task: {element.task}
@@ -207,7 +207,7 @@ function StatusColumns() {
         onDrop={(e) => handleDrop(e, 'green')}
       >
         <div>
-        <span className="shadow-md shadow-green-500 p-2 mb-2 font-bold w-full flex justify-center items-center">Completed
+        <span className="shadow-md bg-blue-100 shadow-green-500 p-2 mb-2 font-bold w-full rounded flex justify-center items-center">Completed
         <span 
           className='text-sm font-light ml-1'>- {completedTasks.length} {completedTasks.length > 1 ? "Items" : "Item"}
         </span></span>
@@ -217,7 +217,7 @@ function StatusColumns() {
             key={element.id}
             draggable
             onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-7 gap-2 bg-blue-100 rounded hover:cursor-grab"
+            className="flex flex-col p-4 gap-2 bg-blue-100 rounded hover:cursor-grab shadow-lg"
             style={{ borderBottom: `3px solid ${element.color}` }}
           >
           <p className="p-2 font-bold text-center">Task: {element.task}

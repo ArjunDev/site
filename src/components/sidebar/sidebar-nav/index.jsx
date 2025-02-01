@@ -7,26 +7,29 @@ const SideBarNav = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Close the dropdown when the route changes to anything outside the dashboard
+    // Close the dropdown when the route changes to anything outside the Projects
     if (!location.pathname.startsWith("/project")) {
+      //console.log(location.pathname)
       setIsDropdownOpen(false);
     }
+    
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col items-start bg-gray-700 px-6 py-4 h-screen w-auto gap-4 text-white font-bold">
+    <div className="flex flex-col items-start bg-gray-700 px-6 py-4 w-auto sticky top-0 h-screen gap-4 text-white font-bold">
     {/* Navigation Links */}
     <NavLink
       className={({ isActive }) =>
         isActive
           ? "mt-2 text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
           : "mt-2 flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+          
       }
-      to="/"
+      to="/home"
     >
     <FaHouseUser />Home</NavLink>
 
-    {/* Dashboard with Dropdown */}
+    {/* Projects tab with Dropdown */}
     <div>
       <div
         className="flex items-center cursor-pointer gap-2"
@@ -54,23 +57,23 @@ const SideBarNav = () => {
         <ul className="flex flex-col bg-gray-800 mt-2 rounded-md shadow-lg overflow-hidden">
           <li className="px-4 py-2 hover:bg-gray-600 transition-all">
             <NavLink
-              to="/project/profile"
+              to="/project/project1"
               className={({ isActive }) =>
                 isActive
                   ? "text-blue-500 font-bold"
                   : "text-white hover:text-blue-400 transition-all"
               }
-            >Profile</NavLink>
+            >Project 1</NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-600 transition-all">
             <NavLink
-              to="/project/settings"
+              to="/project/project2"
               className={({ isActive }) =>
                 isActive
                   ? "text-blue-500 font-bold"
                   : "text-white hover:text-blue-400 transition-all"
               }
-            >Settings</NavLink>
+            >Project 2</NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-600 transition-all">
             <NavLink
