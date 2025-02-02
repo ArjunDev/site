@@ -7,17 +7,17 @@ import ProjectSummaryModal from './kanban/project-summary-modal';
 
 const Project3 = () => {
 
-  const { projectSummaryModal, setProjectSummaryModal} = useContext(ElementsData); 
+  const { projectSummaryModal } = useContext(ElementsData); 
   // global context state
 
   return (
-    <div className='flex justify-center items-center w-full'>
-      <div className="flex flex-col items-center w-full bg-blue-50">
-      {projectSummaryModal.kanban.isOpen && <ProjectSummaryModal/>}
-      <InputBar/>
-      <StatusColumns/>
+    <div className='flex justify-center items-center w-full min-h-screen'>
+      <div className="flex flex-col items-center bg-blue-50">
+        {projectSummaryModal.kanban.isOpen && <ProjectSummaryModal/>}
+        <InputBar/>
+        <StatusColumns/>
       </div>
-  </div>
+    </div>
   )
 }
 

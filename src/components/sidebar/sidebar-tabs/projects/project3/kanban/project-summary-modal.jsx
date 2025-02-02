@@ -15,7 +15,7 @@ const ProjectSummaryModal = () => {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center z-50">
   {/* Backdrop with blur effect */}
-  <div className="absolute inset-0 bg-black/50 pointer-events-auto" onClick={handleCloseBtn}></div>
+  <div className="absolute inset-0 bg-black/50 pointer-events-auto"></div>
 
   {/* Modal Content */}
   <div className="relative sm:min-w-[200px] bg-blue-100 p-4 rounded-lg shadow-xl z-50">

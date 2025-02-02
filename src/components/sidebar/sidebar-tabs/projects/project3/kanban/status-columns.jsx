@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
+import DraggableTask from './draggable-task';
 import { ElementsData } from './input-context';
 import EditTask from './edit-task-modal';
 import DeleteTask from './delete-task-modal';
+
 //import { FaTrash, FaPenSquare } from 'react-icons/fa';
 
 function StatusColumns() {
@@ -18,21 +20,14 @@ function StatusColumns() {
 
   // Distribute elements into respective columns based on color and sorting based on priority 
   useEffect(() => {
-    //setPendingTasks(elements.filter((el) => el.color === 'red'));
-    const priorityOrder = {High: 1, Medium: 2, Low: 3};
-
-    const filteredPending = elements.filter((el) => el.color.toLowerCase() === 'red');
-    const sortedPendingTasks = filteredPending.sort((a, b)=> 
-    priorityOrder[a.priority]-priorityOrder[b.priority]);
-    setPendingTasks(sortedPendingTasks);
-    
-    const filteredInprogress = elements.filter((el) => el.color.toLowerCase() === 'orange');
-    const sortedInprogressTasks = filteredInprogress.sort((a,b)=>       priorityOrder[a.priority]-priorityOrder[b.priority]);
-    setInProgressTasks(sortedInprogressTasks);
-
-    const filteredCompleted = elements.filter((el) => el.color.toLowerCase() === 'green');
-    const sortedCompletedTasks = filteredCompleted.sort((a,b)=> priorityOrder[a.priority]-priorityOrder[b.priority]);
-    setCompletedTasks(sortedCompletedTasks);
+    const priorityOrder = { High: 1, Medium: 2, Low: 3 };
+  
+    const sortByPriority = (tasks) => 
+      [...tasks].sort((a, b) => priorityOrder[a.priority] - priorityOrder[b.priority]);
+  
+    setPendingTasks(sortByPriority(elements.filter((el) => el.color.toLowerCase() === 'red')));
+    setInProgressTasks(sortByPriority(elements.filter((el) => el.color.toLowerCase() === 'orange')));
+    setCompletedTasks(sortByPriority(elements.filter((el) => el.color.toLowerCase() === 'green')));
   }, [elements]);
 
   const handleDragStart = (e, element) => {
@@ -124,33 +119,13 @@ function StatusColumns() {
         </span></span>
         </div>
         {pendingTasks.map((element) => (
-          <div
+          <DraggableTask
             key={element.id}
-            draggable
-            onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-4 gap-2 mt-1.5 bg-blue-100 rounded hover:cursor-grab"
-            style={{ borderBottom: `3px solid ${element.color}`}}
-          >
-          <p className="p-2 font-bold text-center">Task: {element.task}</p> 
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Description:</span>
-            <p className='text-xs'>{element.desc}</p>
-          </div>
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Priority: </span>
-            <span className='text-sm'>{element.priority}</span>
-          </div>
-          <div className='flex gap-2 justify-center items-center mt-1'>
-          <button 
-              id={element.id}
-              className="shadow-md shadow-red-300 rounded bg-red-500 w-auto p-1 hover:bg-red-400 font-bold hover:cursor-pointer"
-              onClick={() => handleDeleteTaskBtn(element.id)}>Delete</button>
-            <button
-              id={element.id}
-              className="shadow-md shadow-blue-300 rounded bg-blue-500 w-auto p-1 hover:bg-blue-400 font-bold hover:cursor-pointer"
-              onClick={()=>handleEditTaskBtn(element)}>Edit</button>
-          </div>
-          </div>
+            element={element}
+            handleDragStart={handleDragStart}
+            handleDeleteTaskBtn={handleDeleteTaskBtn}
+            handleEditTaskBtn={handleEditTaskBtn}
+          />
         ))}
       </div>
 
@@ -168,34 +143,13 @@ function StatusColumns() {
         </span></span>
         </div>
         {inProgressTasks.map((element) => (
-          <div
+          <DraggableTask
             key={element.id}
-            draggable
-            onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-4 gap-2 bg-blue-100 rounded hover:cursor-grab shadow-lg"
-            style={{ borderBottom: `3px solid ${element.color}` }}
-          >
-          <p className="p-2 font-bold text-center">Task: {element.task}
-          </p> 
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Description:</span>
-            <p className='text-xs'>{element.desc}</p>
-          </div>
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Priority:</span>
-            <span className='text-sm'>{element.priority}</span>
-          </div>
-          <div className='flex gap-2 justify-center items-center mt-1'>
-            <button 
-              id={element.id}
-              className="shadow-md shadow-red-300 rounded bg-red-500 w-auto p-1 hover:bg-red-400 font-bold hover:cursor-pointer"
-              onClick={() => handleDeleteTaskBtn(element.id)}>Delete</button>
-            <button
-              id={element.id}
-              className="shadow-md shadow-blue-300 rounded bg-blue-500 w-auto p-1 hover:bg-blue-400 font-bold hover:cursor-pointer"
-              onClick={()=>handleEditTaskBtn(element)}>Edit</button>
-          </div>
-          </div>
+            element={element}
+            handleDragStart={handleDragStart}
+            handleDeleteTaskBtn={handleDeleteTaskBtn}
+            handleEditTaskBtn={handleEditTaskBtn}
+          />
         ))}
       </div>
 
@@ -213,34 +167,13 @@ function StatusColumns() {
         </span></span>
         </div>
         {completedTasks.map((element) => (
-          <div
+          <DraggableTask
             key={element.id}
-            draggable
-            onDragStart={(e) => handleDragStart(e, element)}
-            className="flex flex-col p-4 gap-2 bg-blue-100 rounded hover:cursor-grab shadow-lg"
-            style={{ borderBottom: `3px solid ${element.color}` }}
-          >
-          <p className="p-2 font-bold text-center">Task: {element.task}
-          </p> 
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Description:</span>
-            <p className='text-xs'>{element.desc}</p>
-          </div>
-          <div>
-            <span className='font-bold mr-1.5 mb-1.5 text-base'>Priority:</span>
-            <span className='text-sm'>{element.priority}</span>
-          </div>
-          <div className='flex gap-2 justify-center items-center mt-1'>
-            <button 
-              id={element.id}
-              className="shadow-md shadow-red-300 rounded bg-red-500 w-auto p-1 hover:bg-red-400 font-bold hover:cursor-pointer"
-              onClick={() => handleDeleteTaskBtn(element.id)}>Delete</button>
-            <button
-              id={element.id}
-              className="shadow-md shadow-blue-300 rounded bg-blue-500 w-auto p-1 hover:bg-blue-400 font-bold hover:cursor-pointer"
-              onClick={()=>handleEditTaskBtn(element)}>Edit</button>
-            </div>
-          </div>
+            element={element}
+            handleDragStart={handleDragStart}
+            handleDeleteTaskBtn={handleDeleteTaskBtn}
+            handleEditTaskBtn={handleEditTaskBtn}
+          />
         ))}
       </div>
     </div>

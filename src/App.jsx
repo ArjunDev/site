@@ -25,7 +25,7 @@ function App() {
   }, [location]);
 
   return (
-      <div className='flex'>
+      <div className='flex flex-col sm:flex-row'>
       <InputContext>
       <SideBarNav/>
       <Routes>

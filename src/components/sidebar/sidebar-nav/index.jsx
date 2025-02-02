@@ -12,104 +12,121 @@ const SideBarNav = () => {
       //console.log(location.pathname)
       setIsDropdownOpen(false);
     }
-    
+    //console.log(location)
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col items-start bg-gray-700 px-6 py-4 w-auto sticky top-0 h-screen gap-4 text-white font-bold">
-    {/* Navigation Links */}
-    <NavLink
-      className={({ isActive }) =>
-        isActive
-          ? "mt-2 text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
-          : "mt-2 flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-          
-      }
-      to="/home"
-    >
-    <FaHouseUser />Home</NavLink>
+    <div className="sm:flex-row sm:w-max">
+      <div className="flex justify-center items-center flex-row bg-gray-900 w-auto h-15 gap-3 text-blue-100 font-bold sm:w-auto sticky sm:sticky top-0 sm:flex-col sm:justify-start sm:gap-8 sm:items-start sm:p-4 sm:h-screen">
 
-    {/* Projects tab with Dropdown */}
-    <div>
-      <div
-        className="flex items-center cursor-pointer gap-2"
-        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-      >
+      {/* Home nav tab */}
+      <div>
         <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-blue-500 font-bold flex justify-center items-center gap-2"
-              : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-          }
-          to="/project"
-        >
-        <FaFolderOpen />Projects</NavLink>
-        {/* Arrow Icon */}
-        <span
-          className={`ml-1 transform transition-transform duration-200 ${
-            isDropdownOpen ? "rotate-90" : ""
-          }`}
-        >
-          <FaChevronRight className="w-4 h-4" />
-        </span>
+        className={({ isActive }) =>
+          isActive
+            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+            
+        }
+        to="/home"
+      >
+        <FaHouseUser />Home</NavLink>
       </div>
-      {isDropdownOpen && (
-        <ul className="flex flex-col bg-gray-800 mt-2 rounded-md shadow-lg overflow-hidden">
-          <li className="px-4 py-2 hover:bg-gray-600 transition-all">
+
+      {/* Projects tab with Dropdown */}
+      <div className="flex flex-col">
+        <div
+          className="cursor-pointer gap-2 sm:flex-col sm:relative"
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        >
+          <div className="flex justify-between items-center gap-2">
             <NavLink
-              to="/project/project1"
+              // onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className={({ isActive }) =>
                 isActive
-                  ? "text-blue-500 font-bold"
-                  : "text-white hover:text-blue-400 transition-all"
+                  ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+                  : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
               }
-            >Project 1</NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-600 transition-all">
-            <NavLink
-              to="/project/project2"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-500 font-bold"
-                  : "text-white hover:text-blue-400 transition-all"
-              }
-            >Project 2</NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-600 transition-all">
-            <NavLink
-              to="/project/kanban"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-500 font-bold"
-                  : "text-white hover:text-blue-400 transition-all"
-              }
-            >Kanban</NavLink>
-          </li>
-        </ul>
-      )}
+              to="/project"
+            ><FaFolderOpen />Projects
+            </NavLink>
+          {/* Arrow Icon */}
+            <div 
+              className={"transform transition-transform duration-200 " + (isDropdownOpen ? "rotate-90" : "")}
+            ><FaChevronRight />
+            </div>
+          </div>
+          {isDropdownOpen && (
+            <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-6">
+              <ul className="flex flex-col bg-gray-900 w-full">
+                <li className="px-4 py-2 hover:bg-gray-700 transition-all">
+                  <NavLink
+                    to="/project/project1"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-blue-500 font-bold"
+                        : "text-white hover:text-blue-400 transition-all"
+                    }
+                  >
+                    Project 1
+                  </NavLink>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-700 transition-all">
+                  <NavLink
+                    to="/project/project2"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-blue-500 font-bold"
+                        : "text-white hover:text-blue-400 transition-all"
+                    }
+                  >
+                    Project 2
+                  </NavLink>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-700 transition-all">
+                  <NavLink
+                    to="/project/kanban"
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-blue-500 font-bold"
+                        : "text-white hover:text-blue-400 transition-all"
+                    }
+                  >
+                    Kanban
+                  </NavLink>
+                </li>
+              </ul>
+            </div> 
+          )}
+        </div>
+      </div>
+      {/* Other nav tab  */}
+      <div>    
+        <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+        }
+        to="/other"
+      >
+        <FaBook /> Other</NavLink>
+      </div>
+
+      {/* About nav tab  */}
+      <div>    
+        <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+        }
+        to="/about"
+      >
+        <FaUser />About</NavLink>
+      </div>
     </div>
-
-    {/* Other Links */}
-    <NavLink
-      className={({ isActive }) =>
-        isActive
-          ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
-          : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-      }
-      to="/other"
-    >
-    <FaBook /> Other</NavLink>
-    <NavLink
-      className={({ isActive }) =>
-        isActive
-          ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
-          : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-      }
-      to="/about"
-    >
-    <FaUser />About</NavLink>
   </div>
-
   );
 };
 
