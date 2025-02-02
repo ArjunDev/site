@@ -18,7 +18,7 @@ const ProjectSummaryModal = () => {
   <div className="absolute inset-0 bg-black/50 pointer-events-auto"></div>
 
   {/* Modal Content */}
-  <div className="relative sm:min-w-[200px] bg-blue-100 p-4 rounded-lg shadow-xl z-50">
+  <div className="relative m-5 sm:min-w-[200px] bg-cyan-50 p-4 rounded-lg shadow-xl z-50">
     <p className="font-bold mb-2 text-lg">Summary:</p>
     
     {/* List of summary */}

@@ -11,13 +11,11 @@ const Project3 = () => {
   // global context state
 
   return (
-    <div className='flex justify-center items-center w-full min-h-screen'>
-      <div className="flex flex-col items-center bg-blue-50">
+      <div className="flex flex-col items-center w-full  bg-blue-50">
         {projectSummaryModal.kanban.isOpen && <ProjectSummaryModal/>}
         <InputBar/>
         <StatusColumns/>
       </div>
-    </div>
   )
 }
 

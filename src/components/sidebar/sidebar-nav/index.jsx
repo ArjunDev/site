@@ -16,8 +16,7 @@ const SideBarNav = () => {
   }, [location.pathname]);
 
   return (
-    <div className="sm:flex-row sm:w-max">
-      <div className="flex justify-center items-center flex-row bg-gray-900 w-auto h-15 gap-3 text-blue-100 font-bold sm:w-auto sticky sm:sticky top-0 sm:flex-col sm:justify-start sm:gap-8 sm:items-start sm:p-4 sm:h-screen">
+    <div className="flex justify-center items-center bg-gray-900 h-15 gap-3 text-blue-100 font-bold sm:min-w-max sticky sm:sticky top-0 sm:flex-col sm:justify-start sm:gap-8 sm:items-start sm:p-4 sm:h-screen">
 
       {/* Home nav tab */}
       <div>
@@ -57,7 +56,7 @@ const SideBarNav = () => {
             </div>
           </div>
           {isDropdownOpen && (
-            <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-6">
+            <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3">
               <ul className="flex flex-col bg-gray-900 w-full">
                 <li className="px-4 py-2 hover:bg-gray-700 transition-all">
                   <NavLink
@@ -126,7 +125,6 @@ const SideBarNav = () => {
         <FaUser />About</NavLink>
       </div>
     </div>
-  </div>
   );
 };
 

@@ -88,7 +88,7 @@ function StatusColumns() {
   };
 
   return (
-    <div className="flex justify-between items-start gap-4 mt-8 w-full lg:w-[90%]">
+    <div className="flex justify-between items-start sm:flex-1 gap-4 mt-8 w-full">
       {/* Render the EditTask modal when editing */}
       {isEditing && (
         <EditTask
@@ -107,7 +107,7 @@ function StatusColumns() {
       )}
       {/* Pending Column */}
       <div
-        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-1 p-2"
+        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-4 p-2"
         id="pending-col"
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, 'red')}
@@ -131,7 +131,7 @@ function StatusColumns() {
 
       {/* InProgress Column */}
       <div
-        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-1 p-2"
+        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-4 p-2"
         id="inprogress-col"
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, 'orange')}
@@ -155,7 +155,7 @@ function StatusColumns() {
 
       {/* Completed Column */}
       <div
-        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-1 p-2"
+        className="flex flex-col min-h-screen flex-1 border border-dashed border-cyan-500 gap-4 p-2"
         id="completed-col"
         onDragOver={handleDragOver}
         onDrop={(e) => handleDrop(e, 'green')}

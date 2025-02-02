@@ -13,7 +13,7 @@ import Project2 from './components/sidebar/sidebar-tabs/projects/project2/projec
 
 function App() {
 
-  const [lastVisitedPage, setLastVisitedPage] = useState(localStorage.getItem("lastVisitedPage") );
+  const [lastVisitedPage, setLastVisitedPage] = useState(localStorage.getItem("lastVisitedPage"));
   const location = useLocation();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
   }, [location]);
 
   return (
-      <div className='flex flex-col sm:flex-row'>
+      <div className='flex w-full min-h-screen flex-col sm:flex-row sm:w-full overflow-hidden'>
       <InputContext>
       <SideBarNav/>
       <Routes>
