@@ -56,7 +56,7 @@ const SideBarNav = () => {
             </div>
           </div>
           {isDropdownOpen && (
-            <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3">
+            <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
               <ul className="flex flex-col bg-gray-900 w-full">
                 <li className="px-4 py-2 hover:bg-gray-700 transition-all">
                   <NavLink
@@ -72,14 +72,14 @@ const SideBarNav = () => {
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-700 transition-all">
                   <NavLink
-                    to="/project/project2"
+                    to="/project/project2/recipehome"
                     className={({ isActive }) =>
                       isActive
                         ? "text-blue-500 font-bold"
                         : "text-white hover:text-blue-400 transition-all"
                     }
                   >
-                    Project 2
+                    Recipe Finder
                   </NavLink>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-700 transition-all">
