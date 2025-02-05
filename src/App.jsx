@@ -38,7 +38,7 @@ function App() {
           {/* <Route index element={<Navigate to="/project/kanban" replace />}/>  */}
           
            {/* Show the last visited page by default */}
-          <Route path="/project" element={<Navigate to={lastVisitedPage} replace />} />
+          {/* <Route path="/project" element={<Navigate to={lastVisitedPage} replace />} /> */}
           <Route path="project1" element={<Project1 />} />
           <Route path="project2" element={<RecipeApp/>}>
             <Route path="recipehome" element={<RecipeHome/>}/>
