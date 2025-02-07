@@ -7,11 +7,11 @@ import Other from './components/sidebar/sidebar-tabs/other';
 import About from './components/sidebar/sidebar-tabs/about';
 import { InputContext } from './components/sidebar/sidebar-tabs/projects/project3/kanban/input-context';
 import Project1 from './components/sidebar/sidebar-tabs/projects/project1/project1';
-//import Project2 from './components/sidebar/sidebar-tabs/projects/project2/project2';
 import RecipeApp from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/recipe-app';
 import RecipeHome from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/pages/home';
 import Favorites from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/pages/favorites';
 import Details from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/pages/details';
+import FavRecipeDetails from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/pages/favorites/Fav-recipe-details';
 
 function App() {
 
@@ -42,8 +42,9 @@ function App() {
           <Route path="project1" element={<Project1 />} />
           <Route path="project2" element={<RecipeApp/>}>
             <Route path="recipehome" element={<RecipeHome/>}/>
-            <Route path="favorites" element={<Favorites/>}/>
             <Route path="recipehome/recipe-item/:id" element={<Details/>}/>
+            <Route path="favorites" element={<Favorites/>}/>
+            <Route path='favorites/recipe-item/:id' element={<FavRecipeDetails/>}/>
           </Route>
           <Route path="kanban" element={<Project3 />} />
         </Route>

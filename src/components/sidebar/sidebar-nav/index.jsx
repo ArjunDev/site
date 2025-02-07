@@ -22,7 +22,7 @@ const SideBarNav = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex justify-center items-center bg-gray-900 h-15 gap-3 text-blue-100 font-bold sticky sm:min-w-max sm:sticky top-0 sm:flex-col sm:justify-start sm:gap-8 sm:items-start sm:p-4 sm:h-screen z-50">
+    <div className="flex justify-center items-center bg-gray-900 h-15 gap-3 text-blue-100 font-bold sticky sm:min-w-max top-0 sm:flex-col sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50">
 
       {/* Home nav tab */}
       <div>
