@@ -20,16 +20,6 @@ export const InputContext = ({ children }) => {
         "Optimized performance using React hooks like useState and useEffect, Context API"
       ],
       isOpen: true
-    },
-    project2 : {
-      name: "Project-2",
-      summary: "Project2 summary",
-      isOpen: true
-    },
-    project1 : {
-      name: "Project-3",
-      summary: "Project1 summary",
-      isOpen: true
     }
   });
   //global state to manage project summary modal
