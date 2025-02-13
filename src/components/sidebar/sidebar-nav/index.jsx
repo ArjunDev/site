@@ -22,24 +22,29 @@ const SideBarNav = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex justify-center items-center bg-gray-900 h-16 gap-3 text-blue-100 font-bold sticky sm:min-w-max bottom-0 sm:flex-col sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto">
+    <div className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed bottom-0 left-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
 
       {/* Home nav tab */}
       <div>
         <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            ? "bg-gray-50 p-1 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded flex justify-center items-center gap-2 transition-all"
             : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-            
         }
         to="/home"
       >
-        <FaHouseUser />Home</NavLink>
+        <FaHouseUser/>Home</NavLink>
       </div>
 
       {/* Projects tab with Dropdown */}
-      <div className="flex flex-col">
+      <div 
+        // className="flex flex-col"
+        className={`${active ?
+          "bg-gray-50 p-1 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded flex flex-col transition-all"
+          : "flex flex-col hover:text-blue-400 transition-all"}`
+      }
+        >
         <div
           className="cursor-pointer gap-2 sm:flex-col sm:relative flex justify-center items-center"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -53,13 +58,13 @@ const SideBarNav = () => {
           {/* Arrow Icon */}
           <div 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={"hover:text-blue-400 transform transition-transform duration-200 " + (isDropdownOpen ? "rotate-90 text-blue-500" : " ")}
+            className={"hover:text-blue-400 transform transition-transform duration-200 " + (isDropdownOpen ? "sm:rotate-90 rotate-270 text-blue-500" : " ")}
           ><FaChevronRight />
           </div>
         </div>
           
         {isDropdownOpen && (
-          <div className="absolute top-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
+          <div className="absolute bottom-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
           <ul className="flex flex-col bg-gray-900 w-full">
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
@@ -107,7 +112,7 @@ const SideBarNav = () => {
         <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            ? "bg-gray-50 p-1 sm:bg-transparent sm:p-0 rounded text-blue-600 font-bold flex justify-center items-center gap-2 transition-all"
             : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
         }
         to="/other"
@@ -116,17 +121,17 @@ const SideBarNav = () => {
       </div>
 
       {/* About nav tab  */}
-      <div>    
+      {/* <div>    
         <NavLink
         className={({ isActive }) =>
           isActive
-            ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all"
+            ? "bg-gray-50 p-1 sm:bg-none rounded text-blue-600 font-bold  flex justify-center items-center gap-2 transition-all"
             : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
         }
         to="/about"
       >
         <FaUser />About</NavLink>
-      </div>
+      </div> */}
     </div>
   );
 };
