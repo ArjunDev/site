@@ -29,7 +29,7 @@ const SideBarNav = () => {
         <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-gray-50 p-1 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded flex justify-center items-center gap-2 transition-all"
+            ? "bg-gray-50 py-1 px-3 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex justify-center items-center gap-2 transition-all"
             : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
         }
         to="/home"
@@ -41,7 +41,7 @@ const SideBarNav = () => {
       <div 
         // className="flex flex-col"
         className={`${active ?
-          "bg-gray-50 p-1 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded flex flex-col transition-all"
+          "bg-gray-50 py-1 px-2 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex flex-col transition-all"
           : "flex flex-col hover:text-blue-400 transition-all"}`
       }
         >
@@ -49,7 +49,7 @@ const SideBarNav = () => {
           className="cursor-pointer gap-2 sm:flex-col sm:relative flex justify-center items-center"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-        <div className="flex justify-center items-center sm:flex sm:justify-center sm:items-center gap-3">
+        <div className="flex justify-center items-center sm:flex sm:justify-center sm:items-center gap-2">
           <div 
            className={`${active || isDropdownOpen ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all" : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"}`}
           >
@@ -71,7 +71,7 @@ const SideBarNav = () => {
                 to="/project/project1"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-500 font-bold"
+                    ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
               >
@@ -80,10 +80,10 @@ const SideBarNav = () => {
             </li>
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
-                to="/project/project2/recipehome"
+                to="/project/recipeapp/home"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-500 font-bold"
+                    ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
               >
@@ -95,7 +95,7 @@ const SideBarNav = () => {
                 to="/project/kanban"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-500 font-bold"
+                    ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
               >
@@ -112,7 +112,7 @@ const SideBarNav = () => {
         <NavLink
         className={({ isActive }) =>
           isActive
-            ? "bg-gray-50 p-1 sm:bg-transparent sm:p-0 rounded text-blue-600 font-bold flex justify-center items-center gap-2 transition-all"
+            ? "bg-gray-50 py-1 px-3 sm:bg-transparent sm:p-0 rounded-2xl text-blue-600 font-bold flex justify-center items-center gap-2 transition-all"
             : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
         }
         to="/other"

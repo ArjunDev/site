@@ -27,9 +27,9 @@ function App() {
         {/* <Route path='/about' element={<About/>} /> */}
         <Route path='/project'>
           <Route path="project1" element={<Project1 />} />
-          <Route path="project2" element={<RecipeApp/>}>
-            <Route path="recipehome" element={<RecipeHome/>}/>
-            <Route path="recipehome/recipe-item/:id" element={<Details/>}/>
+          <Route path="recipeapp" element={<RecipeApp/>}>
+            <Route path="home" element={<RecipeHome/>}/>
+            <Route path="home/recipe-item/:id" element={<Details/>}/>
             <Route path="favorites" element={<Favorites/>}/>
             <Route path='favorites/recipe-item/:id' element={<FavRecipeDetails/>}/>
           </Route>
