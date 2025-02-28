@@ -26,7 +26,7 @@ function App() {
         <Route path='/other' element={<Other/>} />
         {/* <Route path='/about' element={<About/>} /> */}
         <Route path='/project'>
-          <Route path="project1" element={<Project1 />} />
+          <Route path="lms" element={<Project1 />} />
           <Route path="recipeapp" element={<RecipeApp/>}>
             <Route path="home" element={<RecipeHome/>}/>
             <Route path="home/recipe-item/:id" element={<Details/>}/>

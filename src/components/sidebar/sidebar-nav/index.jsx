@@ -68,15 +68,13 @@ const SideBarNav = () => {
           <ul className="flex flex-col bg-gray-900 w-full">
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
-                to="/project/project1"
+                to="/project/lms"
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
-              >
-                Project 1
-              </NavLink>
+              >LMS</NavLink>
             </li>
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink

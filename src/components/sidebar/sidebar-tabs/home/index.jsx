@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='flex justify-center items-center flex-col w-full h-auto gap-6 bg-gray-300 font-mono sm:w-full sm:min-h-screen'>
+    <div className='flex justify-center items-center flex-col w-full h-auto gap-6 bg-gray-50 font-mono sm:w-full sm:min-h-screen'>
       <div className='flex justify-center items-center flex-col sm:flex-row gap-4 sm:gap-6 mt-16'>
         <div className='w-52 h-52 rounded-full shadow-md shadow-gray-900 overflow-hidden'>
           <img 
@@ -62,19 +62,19 @@ const Home = () => {
             <p className="font-bold mb-4 text-center">Core Front-End Technologies</p>
             <li>HTML5, CSS3, JavaScript (ES6+)</li>
             <li>Responsive Web Design (RWD)</li>
-            <li>Cross-Browser Compatibility</li>
+            {/* <li>Cross-Browser Compatibility</li> */}
           </ul>
           <ul className="flex-1 p-4 border rounded-2xl shadow-md list-disc list-inside pl-5 sm:min-h-[180px] sm:h-full w-full">
             <p className="font-bold mb-4 text-center">Front-End Libraries</p>
             <li>React.js (Hooks, Context API, React Router)</li>
-            <li>Redux / Zustand (State Management)</li>
+            <li>Redux Toolkit (State Management)</li>
             <li>Tailwind CSS</li>
           </ul>
           <ul className="flex-1 p-4 border rounded-2xl shadow-md list-disc list-inside pl-5 sm:h-full w-full">
             <p className="font-bold mb-4 text-center">Development Tools & Build Systems</p>
+            <li>Git, GitHub</li>
             <li>Vite</li>
             <li>NPM</li>
-            <li>Git, GitHub</li>
           </ul>
         </div>
       </div>  
