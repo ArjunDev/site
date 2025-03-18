@@ -43,11 +43,11 @@ const Home = () => {
             <span className='font-bold text-2xl'>About Me</span>
         </div>
         <div className='flex gap-2'>
-            <div className='flex-1 flex flex-col justify-center items-center p-4 border rounded-2xl shadow-lg bg-gray-900 text-white'>
+            <div className='flex-1 flex flex-col justify-center items-center p-4 border rounded-2xl shadow-lg bg-gray-800 text-white'>
               <p className='font-bold text-lg p-2'>Experience</p>
               <p className='text-center'>3+ years frontend development</p>
             </div>
-            <div className='flex-1 flex flex-col justify-start items-center p-4 border rounded-2xl shadow-lg bg-gray-900 text-white'>
+            <div className='flex-1 flex flex-col justify-start items-center p-4 border rounded-2xl shadow-lg bg-gray-800 text-white'>
               <p className='font-bold text-lg p-2'>Education</p>
               <p className='text-center'>Bachelors of Engineering</p>
             </div>
@@ -64,7 +64,7 @@ const Home = () => {
             <li>Responsive Web Design (RWD)</li>
             {/* <li>Cross-Browser Compatibility</li> */}
           </ul>
-          <ul className="flex-1 p-4 border rounded-2xl shadow-md list-disc list-inside pl-5 sm:min-h-[180px] sm:h-full w-full bg-gray-900 text-white">
+          <ul className="flex-1 p-4 border rounded-2xl shadow-md list-disc list-inside pl-5 sm:min-h-[180px] sm:h-full w-full bg-gray-800 text-white">
             <p className="font-bold mb-4 text-center">Front-End Libraries</p>
             <li>React.js (Hooks, Context API, React Router)</li>
             <li>Redux Toolkit (State Management)</li>

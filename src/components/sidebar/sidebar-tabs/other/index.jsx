@@ -10,7 +10,7 @@ const Other = () => {
           className='object-bottom min-w-72 h-52 rounded-2xl overflow-hidden'
         />
         <a 
-          className='bg-green-600 font-medium py-2 px-3 rounded-2xl cursor-pointer shadow-gray-900 shadow-md'
+          className='bg-gray-900 font-medium py-2 px-3 rounded-lg cursor-pointer shadow-gray-900 shadow-md text-white'
           target='_blank'
           href="https://arjundev.github.io/tvshow-app/" 
           rel="noopener noreferrer"
@@ -23,7 +23,7 @@ const Other = () => {
           className='object-bottom w-72 h-52 rounded-2xl overflow-hidden'
         />
         <a 
-          className='bg-green-600 font-medium py-2 px-3 rounded-2xl cursor-pointer shadow-gray-900 shadow-md'
+          className='bg-gray-900 font-medium py-2 px-3 rounded-lg cursor-pointer shadow-gray-900 shadow-md text-white'
           target='_blank'
           href="https://arjundev.github.io/todo-react-app/" 
           rel="noopener noreferrer"
@@ -36,7 +36,7 @@ const Other = () => {
           className='object-fill w-72 h-52 rounded-2xl overflow-hidden'
         />
         <a 
-          className='bg-green-600 font-medium py-2 px-3 rounded-2xl cursor-pointer shadow-gray-900 shadow-md'
+          className='bg-gray-900 font-medium py-2 px-3 rounded-lg cursor-pointer shadow-gray-900 shadow-md text-white'
           target='_blank'
           href="https://arjundev.github.io/quiz-app/" 
           rel="noopener noreferrer"
