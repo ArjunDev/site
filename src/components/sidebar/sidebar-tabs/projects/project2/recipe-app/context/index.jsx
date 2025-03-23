@@ -15,6 +15,7 @@ export default function GlobalState({children}){
       summary: [
         "Developed a Recipe Finder App using React.js and Tailwind CSS.",
         "Integrated a third-party API to fetch and display recipes dynamically.",
+        "Implemented Pagination to move between content.",
         "Implemented a favorites feature to allow users to save preferred recipes.",
         "Built client-side routing with React Router DOM for seamless navigation.",
         "Designed a responsive and user-friendly UI for smooth browsing.",
