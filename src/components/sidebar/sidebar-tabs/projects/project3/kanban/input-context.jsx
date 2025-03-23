@@ -8,7 +8,6 @@ export const InputContext = ({ children }) => {
   const [elements, setElements] = useState([]);
   //Global state to manage tasks  
   const [projectSummaryModal, setProjectSummaryModal] = useState({
-    
     kanban: {
       name: "Kanban",
       summary: [
@@ -32,8 +31,7 @@ export const InputContext = ({ children }) => {
   return (
     <ElementsData.Provider 
      value={{ elements, setElements, projectSummaryModal,setProjectSummaryModal}}
-    >
-      {children}
+    >{children}
     </ElementsData.Provider>
   );
 };
