@@ -6,7 +6,7 @@ const Home = () => {
       <div className='flex justify-center items-center flex-col sm:flex-row gap-4 sm:gap-6 mt-16'>
         <div className='w-52 h-52 rounded-full shadow-md shadow-gray-900 overflow-hidden'>
           <img 
-            src="images/profile-pic.jpg" 
+            src="images/profile-pic-v2.jpg" 
             alt="profile photo"
             className='w-full h-full object-cover'
           />
