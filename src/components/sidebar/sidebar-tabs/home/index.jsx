@@ -45,7 +45,7 @@ const Home = () => {
         <div className='flex gap-2'>
             <div className='flex-1 flex flex-col justify-center items-center p-4 border rounded-2xl shadow-lg bg-gray-800 text-white'>
               <p className='font-bold text-lg p-2'>Experience</p>
-              <p className='text-center'>3+ years frontend development</p>
+              <p className='text-center'>3+ years in frontend development</p>
             </div>
             <div className='flex-1 flex flex-col justify-start items-center p-4 border rounded-2xl shadow-lg bg-gray-800 text-white'>
               <p className='font-bold text-lg p-2'>Education</p>
