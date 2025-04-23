@@ -5,7 +5,7 @@ export const data = [
   },
   { 
     title: "Explore",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1745435309/lms-myCourses_sfsnr7.jpg'
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1745438419/lms-Explore_sszjmy.jpg'
   },
   { 
     title: "MyCourses",
@@ -21,7 +21,7 @@ export const data = [
   },
   { 
     title: "Creater Mode",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1745433760/lms-createCourses_y6a6zn.jpg'
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1745438429/lms-createCourses_vtlydj.jpg'
   },
 
 ]
