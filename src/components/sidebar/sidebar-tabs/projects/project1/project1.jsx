@@ -1,26 +1,39 @@
-import React from 'react'
+import React from 'react';
+import { data } from './summary-data';
 
 const Project1 = () => {
+
+  const box = 'bg-gray-900 rounded-2xl flex flex-col justify-start items-center p-1 overflow-hidden text-white shadow-sm shadow-blue-500 hover:cursor-pointer hover:shadow-md hover:shadow-green-500 transition'
+
   return (
     <div 
-      className='flex flex-col justify-start items-center flex-1 min-h-screen bg-gray-800 p-4 py-8 gap-4'>
-      <ul 
-        className='list-disc list-outside pl-8 flex flex-col justify-start items-start bg-gray-100 text-sm p-2 py-4 rounded'>
-        <li className='font-medium mb-4 list-none'>Summary:</li>
-        <li>Developed a Learning Management System (LMS) using React.js, Tailwind CSS, and Redux Toolkit.</li> 
-        <li>Implemented user authentication with signup and login functionality.</li>
-        <li>Integrated role-switching, allowing users to toggle between learner and course creator modes.</li>
-        <li>Designed multiple pages: Home, Explore Courses, My Courses, Create Courses, and Published Courses.</li>
-        <li>Enabled course purchasing, with enrolled courses appearing in "My Courses."</li>
-        <li>Built a seamless course creation and publishing workflow for creators.</li>
-        <li>Ensured a responsive and user-friendly UI for an enhanced learning experience.</li>
-      </ul>
-      <a 
-        className='bg-blue-500 font-medium p-2 rounded cursor-pointer'
-        target='_blank'
-        href="https://arjundev.github.io/lms-react-app/" 
-        rel="noopener noreferrer"
+      className='flex flex-col justify-start items-center flex-1 min-h-screen bg-gray-800 py-8 gap-4 p-4'>
+      <div>
+        <a 
+          className='bg-blue-500 font-medium p-2 rounded cursor-pointer shadow-2xs'
+          target='_blank'
+          href="https://arjundev.github.io/lms-react-app/" 
+          rel="noopener noreferrer"
         >Check out the App</a>
+      </div>
+      <div className='grid md:grid-cols-3 auto-rows-[200px] gap-4 w-full md:px-56'>
+        {data.map((item, i)=> (
+          <div 
+            key={i}
+            className={`${box} ${(i === 1|| i === 2 || i === 5) ? 'md:col-span-2' : ""}`}
+            onClick={() => window.open('https://arjundev.github.io/lms-react-app/#/explore-courses', '_blank')}
+          >
+          <span>{item.title}</span>
+          <div className="w-full h-64 bg-gray-900 flex items-center justify-center">
+            <img 
+              src={item.url} 
+              alt="image" 
+              className="object-contain h-full"
+            />
+          </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
