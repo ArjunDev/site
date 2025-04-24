@@ -96,9 +96,7 @@ const SideBarNav = () => {
                     ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
-              >
-                Kanban
-              </NavLink>
+              >Kanban</NavLink>
             </li>
           </ul>
           </div> 

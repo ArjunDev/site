@@ -3,8 +3,6 @@ import SideBarNav from './components/sidebar/sidebar-nav';
 import Home from './components/sidebar/sidebar-tabs/home';
 import Project3 from './components/sidebar/sidebar-tabs/projects/project3';
 import Other from './components/sidebar/sidebar-tabs/other';
-// import About from './components/sidebar/sidebar-tabs/about';
-import { InputContext } from './components/sidebar/sidebar-tabs/projects/project3/kanban/input-context';
 import Project1 from './components/sidebar/sidebar-tabs/projects/project1/project1';
 import RecipeApp from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/recipe-app';
 import RecipeHome from './components/sidebar/sidebar-tabs/projects/project2/recipe-app/pages/home';
@@ -17,7 +15,7 @@ function App() {
 
   return (
       <div className='flex w-full min-h-screen flex-col sm:flex-row sm:w-full overflow-hidden'>
-      <InputContext>
+      {/* <InputContext> */}
       <SideBarNav/>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -38,7 +36,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
         {/* navigate to home when goto url that doesn't exist. ex: home/nsdfsj */}
       </Routes>
-      </InputContext>
+      {/* </InputContext> */}
       </div>
   )
 }

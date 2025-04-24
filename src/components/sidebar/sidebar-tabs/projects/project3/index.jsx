@@ -1,23 +1,15 @@
-import React, { useContext } from 'react';
-import { ElementsData } from './kanban/input-context';
-import InputBar from './kanban/input-bar';
-import StatusColumns from './kanban/status-columns';
-import ProjectSummaryModal from './kanban/project-summary-modal';
+import React from 'react';
 
 
 const Project3 = () => {
 
-  const { projectSummaryModal } = useContext(ElementsData); 
-  // global context state
+  
 
   return (
-      <div className="flex flex-col items-center w-full bg-blue-50 ">
-        {projectSummaryModal.kanban.isOpen && <ProjectSummaryModal/>}
-        <InputBar/>
-        <div className="w-full overflow-x-auto">
-          <StatusColumns />
-        </div>
-      </div>
+    <div 
+      className="flex flex-col items-center justify-center bg-gray-800 text-white">
+      <div className='flex'>Kanban</div>
+    </div>
   )
 }
 
