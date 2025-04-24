@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { FaChevronRight, FaHouseUser, FaUser, FaBook, FaFolderOpen } from 'react-icons/fa';
+import { FaChevronRight, FaHouseUser, FaBook, FaFolderOpen } from 'react-icons/fa';
 
 const SideBarNav = () => {
   const [active, setActive ] = useState(false);
@@ -22,7 +22,8 @@ const SideBarNav = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed bottom-0 left-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
+    <div 
+      className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed bottom-0 left-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
 
       {/* Home nav tab */}
       <div>
@@ -39,7 +40,6 @@ const SideBarNav = () => {
 
       {/* Projects tab with Dropdown */}
       <div 
-        // className="flex flex-col"
         className={`${active ?
           "bg-gray-50 py-1 px-2 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex flex-col transition-all"
           : "flex flex-col hover:text-blue-400 transition-all"}`
@@ -78,7 +78,7 @@ const SideBarNav = () => {
             </li>
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
-                to="/project/recipeapp/home"
+                to="/project/recipe-app"
                 className={({ isActive }) =>
                   isActive
                     ? "text-blue-600 font-bold"
@@ -115,19 +115,6 @@ const SideBarNav = () => {
       >
         <FaBook /> Other</NavLink>
       </div>
-
-      {/* About nav tab  */}
-      {/* <div>    
-        <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "bg-gray-50 p-1 sm:bg-none rounded text-blue-600 font-bold  flex justify-center items-center gap-2 transition-all"
-            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
-        }
-        to="/about"
-      >
-        <FaUser />About</NavLink>
-      </div> */}
     </div>
   );
 };
