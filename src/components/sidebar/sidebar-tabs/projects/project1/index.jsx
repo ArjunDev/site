@@ -12,7 +12,7 @@ const Project1 = () => {
         <a 
           className='bg-blue-500 font-medium p-2 rounded cursor-pointer shadow-2xs'
           target='_blank'
-          href="https://arjundev.github.io/lms-react-app/" 
+          href="https://arjundev.github.io/lms-react-app/#/explore-courses" 
           rel="noopener noreferrer"
         >Check out the App</a>
       </div>
