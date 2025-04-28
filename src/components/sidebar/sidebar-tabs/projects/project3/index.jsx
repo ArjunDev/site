@@ -17,24 +17,25 @@ const Project3 = () => {
           rel="noopener noreferrer"
         >Check out the App</a>
       </div>
-      {/* <div className='grid md:grid-cols-3 auto-rows-[200px] gap-4 w-full md:px-56'>
+      <div className='grid md:grid-cols-3 auto-rows-[250px] gap-4 w-full md:px-56 mt-4'>
         {data.map((item, i)=> (
           <div 
             key={i}
-            className={`${box} ${i === 3 ? 'md:col-span-2' : ""}`}
-            onClick={() => window.open('https://arjundev.github.io/recipe-finder-app/#/home', '_blank')}
+            className={`${box} ${i === 3 ? 'md:col-span-3' : ""}`}
+            onClick={() => window.open('https://arjundev.github.io/plan-with-me/', '_blank')}
           >
           <span>{item.title}</span>
-          <div className="w-full h-64 bg-gray-900 flex items-center justify-center">
+          <div className="w-full h-56 bg-gray-900 flex items-center justify-center">
             <img 
               src={item.url} 
               alt="image" 
-              className="object-contain h-full"
+              className="object-fill h-full"
+              
             />
           </div>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   )
 }
