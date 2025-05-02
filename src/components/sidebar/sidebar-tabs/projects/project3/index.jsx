@@ -4,14 +4,14 @@ import {data} from './kanban-data'
 const Project3 = () => {
 
   
-  const box = 'bg-gray-900 rounded-2xl flex flex-col justify-start items-center p-1 overflow-hidden text-white shadow-sm shadow-orange-500 hover:cursor-pointer hover:shadow-md hover:shadow-green-500 transition'
+  const box = 'bg-gray-900 rounded-2xl flex flex-col justify-start items-center p-1 overflow-hidden text-white shadow-sm shadow-blue-500 hover:cursor-pointer hover:shadow-md hover:shadow-green-500 transition'
 
   return (
     <div 
       className='flex flex-col justify-start items-center flex-1 min-h-screen bg-gray-800 py-8 gap-4 p-4'>
       <div>
         <a 
-          className='bg-green-500 font-medium p-2 rounded cursor-pointer shadow-2xs'
+          className='bg-blue-500 font-medium p-2 rounded cursor-pointer shadow-2xs'
           target='_blank'
           href="https://arjundev.github.io/plan-with-me/" 
           rel="noopener noreferrer"
