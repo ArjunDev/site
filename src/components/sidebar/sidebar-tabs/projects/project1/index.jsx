@@ -7,7 +7,7 @@ const Project1 = () => {
 
   return (
     <div 
-      className='flex flex-col justify-start items-center flex-1 min-h-screen bg-gray-800 py-8 gap-4 p-4'>
+      className='flex flex-col justify-start items-center flex-1 min-h-screen bg-gray-800 py-8 gap-4 p-4 mt-14 sm:mt-0'>
       <div>
         <a 
           className='bg-blue-500 font-medium p-2 rounded cursor-pointer shadow-2xs'

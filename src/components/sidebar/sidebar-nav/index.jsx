@@ -23,7 +23,7 @@ const SideBarNav = () => {
 
   return (
     <div 
-      className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed bottom-0 left-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
+      className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed top-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
 
       {/* Home nav tab */}
       <div>
@@ -64,7 +64,7 @@ const SideBarNav = () => {
         </div>
           
         {isDropdownOpen && (
-          <div className="absolute bottom-full rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
+          <div className="absolute top-16 rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
           <ul className="flex flex-col bg-gray-900 w-full">
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
