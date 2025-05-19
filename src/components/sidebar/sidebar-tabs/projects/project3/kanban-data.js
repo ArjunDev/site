@@ -1,19 +1,19 @@
 export const data = [
   { 
-    title: "Add Tasks",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1746184553/add-task_idivgy.jpg'
+    title: "Add New Tasks",
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687097/add-new-task_nnlxpk.jpg'
   },
   { 
-    title: "Delete Tasks",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1746184300/delete-task_updn7t.jpg'
+    title: "Menu/All Projects",
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687097/menu_e0qbq7.jpg'
   },
   { 
-    title: "Edit Tasks",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1746184300/edit-task_whbvwj.jpg'
+    title: "Create New Project",
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687098/create-new-proj_lz5pcu.jpg'
   },
   { 
     title: "Drag and Drop Items Across Columns",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1746184301/home_hwgiaw.jpg'
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687099/dnd_tasks_u0qijo.jpg'
   },
 ]
 
