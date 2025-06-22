@@ -1,5 +1,9 @@
 export const data = [
   { 
+    title: "Drag and Drop Items Across Columns",
+    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687099/dnd_tasks_u0qijo.jpg'
+  },
+  { 
     title: "Add New Tasks",
     url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687097/add-new-task_nnlxpk.jpg'
   },
@@ -10,10 +14,6 @@ export const data = [
   { 
     title: "Create New Project",
     url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687098/create-new-proj_lz5pcu.jpg'
-  },
-  { 
-    title: "Drag and Drop Items Across Columns",
-    url: 'https://res.cloudinary.com/dtpaoymjq/image/upload/v1747687099/dnd_tasks_u0qijo.jpg'
   },
 ]
 

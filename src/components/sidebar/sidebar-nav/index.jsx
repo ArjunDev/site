@@ -23,7 +23,7 @@ const SideBarNav = () => {
 
   return (
     <div 
-      className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed top-0 min-w-full sm:min-w-max sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
+      className="flex justify-center items-center sm:bg-gray-900 h-16 gap-3 text-white font-bold fixed top-0 min-w-full sm:min-w-[180px] sm:flex-col sm:sticky sm:min-h-screen sm:justify-start sm:gap-8 sm:items-start sm:p-4 z-50 sm:h-auto bg-gray-900">
 
       {/* Home nav tab */}
       <div>
@@ -58,7 +58,7 @@ const SideBarNav = () => {
           {/* Arrow Icon */}
           <div 
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={"hover:text-blue-400 transform transition-transform duration-200 " + (isDropdownOpen ? "sm:rotate-90 rotate-270 text-blue-500" : " ")}
+            className={"hover:text-blue-400 transform transition-transform" + (isDropdownOpen ? "rotate-90 text-blue-500" : " ")}
           ><FaChevronRight />
           </div>
         </div>
@@ -84,17 +84,15 @@ const SideBarNav = () => {
                     ? "text-blue-600 font-bold"
                     : "text-white hover:text-blue-400 transition-all"
                 }
-              >
-                Recipe Finder
-              </NavLink>
+              >Recipe Finder</NavLink>
             </li>
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
                 to="/project/kanban"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-600 font-bold"
-                    : "text-white hover:text-blue-400 transition-all"
+                    ? "text-blue-600 font-bold w-full"
+                    : "text-white hover:text-blue-400 transition-all w-full"
                 }
               >Kanban</NavLink>
             </li>

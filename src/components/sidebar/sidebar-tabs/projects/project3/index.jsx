@@ -21,7 +21,7 @@ const Project3 = () => {
         {data.map((item, i)=> (
           <div 
             key={i}
-            className={`${box} ${i === 3 ? 'md:col-span-3' : ""}`}
+            className={`${box} ${i === 0 ? 'md:col-span-3' : ""}`}
             onClick={() => window.open('https://arjundev.github.io/plan-with-me/', '_blank')}
           >
           <span>{item.title}</span>
@@ -30,7 +30,6 @@ const Project3 = () => {
               src={item.url} 
               alt="image" 
               className="object-fill h-full"
-              
             />
           </div>
           </div>
