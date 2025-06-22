@@ -42,29 +42,25 @@ const SideBarNav = () => {
       <div 
         className={`${active ?
           "bg-gray-50 py-1 px-2 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex flex-col transition-all"
-          : "flex flex-col hover:text-blue-400 transition-all"}`
-      }
-        >
+          : "flex flex-col hover:text-blue-400 transition-all"}`}
+      >
         <div
-          className="cursor-pointer gap-2 sm:flex-col sm:relative flex justify-center items-center"
+          className="cursor-pointer gap-2 sm:flex-col sm:items-start sm:relative flex justify-center items-center"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-        <div className="flex justify-center items-center sm:flex sm:justify-center sm:items-center gap-2">
-          <div 
+          <span 
            className={`${active || isDropdownOpen ? "text-blue-500 font-bold flex justify-center items-center gap-2 transition-all" : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"}`}
-          >
-          <FaFolderOpen />Projects
-          </div>
-          {/* Arrow Icon */}
-          <div 
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className={"hover:text-blue-400 transform transition-transform" + (isDropdownOpen ? "rotate-90 text-blue-500" : " ")}
-          ><FaChevronRight />
-          </div>
-        </div>
-          
+          ><FaFolderOpen />Projects
+            {/* Arrow Icon */}
+            <span 
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className={"hover:text-blue-400 transform transition-all" + (isDropdownOpen ? "sm:rotate-90 rotate-90 text-blue-500 transform transition-all" : " ")}
+            ><FaChevronRight />
+            </span>
+          </span>
+
         {isDropdownOpen && (
-          <div className="absolute top-16 rounded-md shadow-lg w-max sm:relative sm:top-3 sm:left-3 sm:z-50 z-50">
+          <div className="absolute top-16 rounded-md shadow-lg w-max sm:w-max sm:relative sm:top-0 sm:z-50 z-50">
           <ul className="flex flex-col bg-gray-900 w-full">
             <li className="px-4 py-2 hover:bg-gray-700 transition-all">
               <NavLink
