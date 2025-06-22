@@ -31,7 +31,7 @@ const SideBarNav = () => {
         className={({ isActive }) =>
           isActive
             ? "bg-gray-50 py-1 px-3 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex justify-center items-center gap-2 transition-all"
-            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all py-1 px-3"
         }
         to="/home"
       >
@@ -41,8 +41,8 @@ const SideBarNav = () => {
       {/* Projects tab with Dropdown */}
       <div 
         className={`${active ?
-          "bg-gray-50 py-1 px-2 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex flex-col transition-all"
-          : "flex flex-col hover:text-blue-400 transition-all"}`}
+          "bg-gray-50 py-1 px-3 sm:bg-transparent sm:p-0 text-blue-600 font-bold rounded-2xl flex flex-col transition-all"
+          : "flex flex-col hover:text-blue-400 transition-all py-1 px-3"}`}
       >
         <div
           className="cursor-pointer gap-2 sm:flex-col sm:items-start sm:relative flex justify-center items-center"
@@ -97,13 +97,14 @@ const SideBarNav = () => {
           )}
       </div>
       </div>
+
       {/* Other nav tab  */}
       <div>    
         <NavLink
         className={({ isActive }) =>
           isActive
             ? "bg-gray-50 py-1 px-3 sm:bg-transparent sm:p-0 rounded-2xl text-blue-600 font-bold flex justify-center items-center gap-2 transition-all"
-            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all"
+            : "flex justify-center items-center gap-2 hover:text-blue-400 transition-all py-1 px-3"
         }
         to="/other"
       >
